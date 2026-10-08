@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Admin | Éclat Beauté Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,400&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"></head>
+<body class="admin">
+<main class="sec admin-wrap">
+  <p class="logo">Éclat <span>Admin</span></p>
+
+  <form id="login" class="panel">
+    <h2>Log in</h2>
+    <label>Password <input type="password" id="pw" required autocomplete="current-password"></label>
+    <button class="btn" type="submit">Log in</button>
+    <p class="msg" id="loginMsg" role="alert"></p>
+  </form>
+
+  <div id="dash" hidden>
+    <div class="admin-top"><a href="/">View site</a><button class="btn btn-ghost btn-sm" id="out">Log out</button></div>
+
+    <form id="notice" class="panel">
+      <h2>Send a notification</h2>
+      <p class="note">Shows as a banner at the top of the site.</p>
+      <label>Message <input id="ntext" maxlength="240" required placeholder="New lace arrivals. Order today."></label>
+      <button class="btn" type="submit">Publish notification</button>
+      <ul class="list" id="nlist"></ul>
+    </form>
+
+    <form id="product" class="panel">
+      <h2>Add a product</h2>
+      <label>Name <input id="pname" maxlength="120" required></label>
+      <label>Category
+        <select id="pcat">
+          <option>Ankara</option><option>Lace</option><option>George</option><option>Chiffon</option><option>Silk</option>
+          <option>Other fabrics</option><option>Jewelry</option><option>Handbags</option><option>Shoes</option>
+          <option>Perfumes</option><option>Clothing</option><option>Beauty</option><option>Accessories</option>
+        </select></label>
+      <label>Price <input id="pprice" maxlength="60" placeholder="₦8,500 per yard"></label>
+      <label>Description <textarea id="pdesc" rows="3" maxlength="500"></textarea></label>
+      <label>Photo <input type="file" id="pimg" accept="image/*"></label>
+      <img id="prev" alt="" hidden>
+      <button class="btn" type="submit">Upload product</button>
+      <p class="msg" id="pmsg" role="status"></p>
+    </form>
+
+    <section class="panel">
+      <h2>Your products</h2>
+      <ul class="list" id="plist"></ul>
+    </section>
+  </div>
+</main>
+<script src="admin.js"></script>
+</body></html>
